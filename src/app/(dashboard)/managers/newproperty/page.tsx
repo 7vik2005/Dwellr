@@ -16,7 +16,7 @@ const NewProperty = () => {
   const { data: authUser } = useGetAuthUserQuery();
 
   const form = useForm<PropertyFormData>({
-    resolver: zodResolver(propertySchema),
+    resolver: zodResolver(propertySchema) as any,
     defaultValues: {
       name: "",
       description: "",
@@ -72,7 +72,7 @@ const NewProperty = () => {
       <div className="bg-white rounded-xl p-6">
         <Form {...form}>
           <form
-            onSubmit={form.handleSubmit(onSubmit)}
+            onSubmit={form.handleSubmit(onSubmit as any)}
             className="p-4 space-y-10"
           >
             {/* Basic Information */}

@@ -2,8 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface FiltersState {
   location: string;
-  beds: string;
-  baths: string;
+  beds: string | null;
+  baths: string | null;
   propertyType: string;
   amenities: string[];
   availableFrom: string;
